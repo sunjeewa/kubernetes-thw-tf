@@ -1,0 +1,9 @@
+[all]
+controller-0
+worker-0
+
+[controllers]
+controller-0
+
+[workers]
+worker-0

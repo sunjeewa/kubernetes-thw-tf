@@ -1,0 +1,49 @@
+---
+# Workers configuration
+  - name: Copying CA Cert 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/ca/ca.pem
+      dest: /var/lib/kubernetes/ca.pem
+      owner: root 
+      group: root 
+
+  - name: Copying instance key 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/worker-0-key.pem
+      dest: /var/lib/kubelet/worker-0-key.pem
+      owner: root 
+      group: root 
+
+  - name: Copying instance cert 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/worker-0.pem
+      dest: /var/lib/kubelet/worker-0.pem
+      owner: root 
+      group: root 
+
+  - name: Copying kubernetes config 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/worker-0.kubeconfig
+      dest: /var/lib/kubelet/kubeconfig
+      owner: root 
+      group: root 
+
+  - name: Copying kube-proxy.kubeconfig 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/kube-proxy.kubeconfig
+      dest: /var/lib/kube-proxy/kubeconfig
+      owner: root 
+      group: root 
+
+  - name: Copying admin.kubeconfig 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/admin.kubeconfig
+      dest: /admin.kubeconfig
+      owner: root 
+      group: root 

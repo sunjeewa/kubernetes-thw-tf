@@ -1,0 +1,89 @@
+---
+  - name: Copying CA Cert 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/ca/ca.pem
+      dest: /etc/etcd/ca.pem
+      owner: root 
+      group: root 
+      mode: '0400'
+
+  - name: Copying CA Key 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/ca/ca-key.pem
+      dest: /ca-key.pem
+      owner: root 
+      group: root 
+      mode: '0400'
+
+  - name: Copying API key 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/kubernetes-api-key.pem
+      dest: /etc/etcd/kubernetes-key.pem
+      owner: root 
+      group: root 
+      mode: '0400'
+
+  - name: Copying API Cert 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/kubernetes-api.pem
+      dest: /etc/etcd/kubernetes.pem
+      owner: root 
+      group: root 
+      mode: '0400'
+
+  - name: Copying service account key 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/ca/service-account-key.pem
+      dest: /service-account-key.pem
+      owner: root 
+      group: root 
+      mode: '0400'
+
+  - name: Copying service account cert 
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/ca/service-account.pem
+      dest: /service-account.pem
+      owner: root 
+      group: root 
+      mode: '0400'
+
+  - name: Copying admin.kubeconfig
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/admin.kubeconfig
+      dest: /admin.kubeconfig
+      owner: root 
+      group: root 
+
+  - name: Copying kube-controller-manager.kubeconfig
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/kube-controller-manager.kubeconfig
+      dest: /kube-controller-manager.kubeconfig 
+      owner: root 
+      group: root 
+
+  - name: Copying kube-scheduler.kubeconfig
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/kube-scheduler.kubeconfig
+      dest: /kube-scheduler.kubeconfig 
+      owner: root 
+      group: root 
+
+  - name: Copying encryption-config.yaml
+    become: yes
+    copy:
+      src: /Users/sun/code/kubernetes/the-hard-way-tf/conf/encryption-config.yaml
+      dest: /encryption-config.yaml
+      owner: root 
+      group: root 
+
+
+

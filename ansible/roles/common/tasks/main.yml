@@ -1,0 +1,7 @@
+---
+# tasks file for common
+- name: Create /etc/etcd 
+  file:
+    path: /etc/etcd
+    state: directory
+    mode: '0755'

@@ -7,3 +7,8 @@
 
 # .tfvars files
 *.tfvars
+ca/
+kubernetes-one-2f2eb99f0f85.json
+terraform.tfstate
+terraform.tfstate.backup
+conf

@@ -1,0 +1,15 @@
+---
+- hosts: workers 
+  become: yes
+  roles:
+      #- common 
+      - worker-certs
+
+- hosts: controllers 
+  become: yes
+  roles:
+      #- common 
+      #- controller-certs
+      #- etcd
+
+

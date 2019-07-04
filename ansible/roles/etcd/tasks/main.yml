@@ -1,0 +1,18 @@
+---
+# tasks file for etcd
+- name: Install etcd
+  apt:
+    name: etcd 
+    update_cache: yes
+
+- name: Update etcd config 
+  template:
+    src: etcd.conf 
+    dest: /etc/default/etcd
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+- name: Restart etcd 
+  service: name=etcd state=restarted
